@@ -1,9 +1,19 @@
-def outer():  # Enclosing
-    def inner():  # Local
-        print("Inner function")
+gv = 30   # Global variable
 
-    print("Outer function")
+
+def outer():  # Enclosing
+    global gv
+    ev = 10
+    gv = 200
+
+    def inner():  # Local
+        nonlocal ev
+        ev = 100
+        lv = 20
+        print("Inside local function -> ", gv, ev, lv)
+
     inner()
+    print("Outer function -->", ev, gv)
 
 
 outer()
