@@ -7,17 +7,18 @@ class Time:
     def __str__(self):
         return f"{self.h:02}:{self.m:02}:{self.s:02}"
 
+    @property
     def total_seconds(self):
         return self.h * 3600 + self.m * 60 + self.s
 
     def __eq__(self, other):
-        return self.total_seconds() == other.total_seconds()
+        return self.total_seconds == other.total_seconds
 
     def __gt__(self, other):
-        return self.total_seconds() > other.total_seconds()
+        return self.total_seconds > other.total_seconds
 
     def __int__(self):
-        return self.total_seconds()
+        return self.total_seconds
 
     def __add__(self, seconds):
         if isinstance(seconds, int):
@@ -28,6 +29,7 @@ class Time:
 
 
 t = Time(10, 20, 30)
+print(t.total_seconds)  # Property
 t2 = Time(10, 20, 30)
 t3 = Time(11, 0, 0)
 # print(t)
