@@ -1,0 +1,11 @@
+CREATE TABLE employees (
+    id       INTEGER      PRIMARY KEY AUTOINCREMENT,
+    fullname VARCHAR (30) NOT NULL,
+    job      VARCHAR (10),
+    salary   INTEGER
+);
+
+insert into employees(fullname,job,salary) values('Jason Hunter','DBA',1500000)
+insert into employees(fullname,job,salary) values('Jessy Liberty','PROG',500000)
+insert into employees(fullname,job,salary) values('Bob Tabour','TL',2500000)
+insert into employees(fullname,job,salary) values('Joe Stagner','SPROG',1300000)
