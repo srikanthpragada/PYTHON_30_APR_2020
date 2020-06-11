@@ -17,7 +17,7 @@ def book_list(request):
     books = Book.objects.all()
     return render(request, 'list.html', {'books': books})
 
-
+# /books/delete/10
 def book_delete(request, id):
     try:
         book = Book.objects.get(id=id)
@@ -42,7 +42,7 @@ def book_add(request):
         else:
             return render(request, 'add.html', {'form': form})
 
-
+# /books/edit/10
 def book_edit(request, id):
     if request.method == "GET":
         try:
