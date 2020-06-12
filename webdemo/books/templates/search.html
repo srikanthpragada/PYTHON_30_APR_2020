@@ -6,11 +6,11 @@
     function getBooks() {
        $.get("/books/dosearch?title=" + $("#title").val(),null, showBooks);
     }
+
     function showBooks(books) {
-        $("#books").html("");  // clear div
         if (books.length == 0)
         {
-            alert("Sorry! No books found!");
+            $("#books").html("<h3>Sorry! No books found!</h3>");
             return;
         }
         output = "<ul>";
