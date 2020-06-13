@@ -77,7 +77,7 @@ def book_do_search(request):
     books = list(Book.objects.filter(title__contains=title).values())
     # send list of dict in the form of array of json objects
     resp = JsonResponse(books, safe=False)
-    # Create cookie with name is search and value is value of title
+    # Create cookie with name search and value is value of title
     resp.set_cookie("search", title,
                     expires=datetime.datetime.now() + datetime.timedelta(days=7))
     return resp

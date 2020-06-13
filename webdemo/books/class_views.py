@@ -9,4 +9,6 @@ class HelloView(TemplateView):
 
 class ListBooksView(ListView):
     model = Book
+    # default context name is object_list
     context_object_name = 'books'  # name to be sent to template
+
